@@ -1,0 +1,5 @@
+<ActionBar title="Cultural Places Map" class="action-bar"></ActionBar>
+
+<GridLayout>
+  <WebView [src]="mapHtml" (loaded)="onWebViewLoaded($event)"></WebView>
+</GridLayout>

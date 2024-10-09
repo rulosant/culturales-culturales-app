@@ -1,0 +1,8 @@
+<GridLayout rows="*, auto">
+  <page-router-outlet></page-router-outlet>
+  <StackLayout row="1" orientation="horizontal" class="bg-gray-200 p-4">
+    <Button text="Events" [nsRouterLink]="['/events']" class="w-1/3 text-center"></Button>
+    <Button text="Places" [nsRouterLink]="['/places']" class="w-1/3 text-center"></Button>
+    <Button text="Calendar" [nsRouterLink]="['/calendar']" class="w-1/3 text-center"></Button>
+  </StackLayout>
+</GridLayout>

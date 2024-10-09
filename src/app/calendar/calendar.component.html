@@ -1,0 +1,11 @@
+<ActionBar title="Event Calendar" class="action-bar"></ActionBar>
+
+<ListView [items]="events" class="page">
+  <ng-template let-event="item">
+    <StackLayout class="list-item p-4" [nsRouterLink]="['/event', event.id]">
+      <Label [text]="event.date | date:'MMM d, yyyy'" class="text-sm font-bold accent-text"></Label>
+      <Label [text]="event.name" class="text-lg primary-text"></Label>
+      <Label [text]="event.location" class="text-sm secondary-text"></Label>
+    </StackLayout>
+  </ng-template>
+</ListView>

@@ -1,0 +1,13 @@
+<ActionBar [title]="event?.name" class="action-bar"></ActionBar>
+
+<ScrollView *ngIf="event" class="page">
+  <StackLayout class="card">
+    <Image [src]="event.imageUrl" class="w-full h-64 rounded-lg"></Image>
+    <Label [text]="event.name" class="text-2xl font-bold mt-4 primary-text"></Label>
+    <Label [text]="event.date | date:'medium'" class="secondary-text"></Label>
+    <Label [text]="event.location" class="text-lg mt-2 accent-text" (tap)="onPlaceTap()"></Label>
+    <Label [text]="event.description" class="mt-4 secondary-text" textWrap="true"></Label>
+    
+    <WebView *ngIf="mapHtml" [src]="mapHtml" height="200" class="mt-4 rounded-lg" (loaded)="onWebViewLoaded($event)"></WebView>
+  </StackLayout>
+</ScrollView>

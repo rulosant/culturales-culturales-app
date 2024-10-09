@@ -1,0 +1,15 @@
+<ActionBar title="Cultural Places" class="action-bar">
+  <ActionItem (tap)="onMapViewTap()" ios.position="right" android.position="actionBar">
+    <Label text="Map" class="action-item"></Label>
+  </ActionItem>
+</ActionBar>
+
+<ListView [items]="places" class="page">
+  <ng-template let-place="item">
+    <StackLayout class="card" [nsRouterLink]="['/place', place.id]">
+      <Label [text]="place.name" class="text-lg font-bold primary-text"></Label>
+      <Label [text]="place.address" class="text-sm secondary-text"></Label>
+      <Label [text]="place.description" class="text-sm secondary-text mt-2" textWrap="true"></Label>
+    </StackLayout>
+  </ng-template>
+</ListView>
